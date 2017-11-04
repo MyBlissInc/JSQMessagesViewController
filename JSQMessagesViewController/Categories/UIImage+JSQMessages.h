@@ -18,8 +18,6 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface UIImage (JSQMessages)
 
 /**
@@ -30,6 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return A new image object masked with the specified color.
  */
 - (UIImage *)jsq_imageMaskedWithColor:(UIColor *)maskColor;
+
+
+// customised method for border in bubble
+- (UIImage *)jsq_imageMaskedWithColor:(UIColor *)maskColor borderColor:(UIColor*)borderColor;
 
 /**
  *  @return The regular message bubble image.
@@ -83,13 +85,4 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage *)jsq_defaultPauseImage;
 
-/**
- *  @return The standard share icon image.
- *
- *  @discussion This is the default icon for the message accessory button.
- */
-+ (UIImage *)jsq_shareActionImage;
-
 @end
-
-NS_ASSUME_NONNULL_END
