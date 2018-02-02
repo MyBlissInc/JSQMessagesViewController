@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JSQMessagesViewController">
             <connections>
-                <outlet property="bgImage" destination="Dl9-JK-Lh6" id="MyZ-NA-yfi"/>
                 <outlet property="collectionView" destination="l9u-2b-4LK" id="bLP-6g-CkO"/>
                 <outlet property="inputToolbar" destination="BoD-Az-3DM" id="w74-g9-1qA"/>
                 <outlet property="toolbarBottomLayoutGuide" destination="rHs-6q-NX4" id="d6h-iu-VMX"/>
@@ -24,10 +23,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Dl9-JK-Lh6">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </imageView>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l9u-2b-4LK" customClass="JSQMessagesCollectionView">
                     <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -49,21 +44,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="BoD-Az-3DM" firstAttribute="top" secondItem="hlc-tR-A66" secondAttribute="bottom" id="4Eh-9s-vyM"/>
-                <constraint firstItem="Dl9-JK-Lh6" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="4z6-Lu-y4P"/>
                 <constraint firstAttribute="trailing" secondItem="BoD-Az-3DM" secondAttribute="trailing" id="7xc-Ha-asg"/>
-                <constraint firstAttribute="trailing" secondItem="Dl9-JK-Lh6" secondAttribute="trailing" id="G1d-hN-JH0"/>
-                <constraint firstAttribute="bottom" secondItem="Dl9-JK-Lh6" secondAttribute="bottom" id="Gp5-G8-K7F"/>
-                <constraint firstItem="Dl9-JK-Lh6" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" id="JBJ-cu-CPs"/>
                 <constraint firstItem="l9u-2b-4LK" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="MmF-oh-Y75"/>
                 <constraint firstAttribute="trailing" secondItem="l9u-2b-4LK" secondAttribute="trailing" id="O9u-TA-A0e"/>
                 <constraint firstAttribute="bottom" secondItem="l9u-2b-4LK" secondAttribute="bottom" id="Re7-WW-UmS"/>
                 <constraint firstItem="hlc-tR-A66" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" id="YNp-7G-YL9"/>
                 <constraint firstItem="l9u-2b-4LK" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" constant="60" id="dCQ-DM-Wdj"/>
                 <constraint firstItem="hlc-tR-A66" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="fxM-Aj-6vE"/>
-                <constraint firstItem="Dl9-JK-Lh6" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" id="g10-Uv-q3M"/>
-                <constraint firstAttribute="trailing" secondItem="Dl9-JK-Lh6" secondAttribute="trailing" id="gHi-ip-TP9"/>
-                <constraint firstAttribute="bottom" secondItem="Dl9-JK-Lh6" secondAttribute="bottom" id="ifY-MY-TtF"/>
-                <constraint firstItem="Dl9-JK-Lh6" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="iu7-KI-zZA"/>
                 <constraint firstAttribute="trailing" secondItem="hlc-tR-A66" secondAttribute="trailing" id="ldh-qP-Ade"/>
                 <constraint firstAttribute="bottom" secondItem="BoD-Az-3DM" secondAttribute="bottom" id="rHs-6q-NX4"/>
                 <constraint firstItem="BoD-Az-3DM" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="ts7-8f-0lH"/>
@@ -72,9 +59,6 @@
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="chat_bg" width="375" height="667"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

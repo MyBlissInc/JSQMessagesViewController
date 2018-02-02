@@ -323,6 +323,5 @@
  @param notification The posted notification.
  */
 - (void)didReceiveMenuWillHideNotification:(NSNotification *)notification;
-@property (weak, nonatomic) IBOutlet UIImageView *bgImage;
 
 @end
