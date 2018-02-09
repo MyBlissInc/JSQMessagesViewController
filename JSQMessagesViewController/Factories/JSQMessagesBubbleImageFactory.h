@@ -61,6 +61,7 @@
  *  @return An initialized `JSQMessagesBubbleImage` object if created successfully, `nil` otherwise.
  */
 - (JSQMessagesBubbleImage *)outgoingMessagesBubbleImageWithColor:(UIColor *)color;
+- (JSQMessagesBubbleImage *)incomingMessagesBubbleImageWithColor:(UIColor *)color withBorderColor:(UIColor *)borderColor;
 
 /**
  *  Creates and returns a `JSQMessagesBubbleImage` object with the specified color for *incoming* message image bubbles.

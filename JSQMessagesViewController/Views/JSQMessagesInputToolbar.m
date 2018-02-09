@@ -188,4 +188,17 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
     _jsq_isObserving = NO;
 }
 
+#pragma mark - increase clickable area of input tool bar
+-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    CGFloat topExtra = 50.0;
+    CGRect frame = CGRectMake(0, -topExtra,
+          self.frame.size.width,
+          self.frame.size.height);
+    
+    if ( CGRectContainsPoint(frame, point) ) {
+        return YES;
+    }
+    return [super pointInside:point withEvent:event];
+}
 @end

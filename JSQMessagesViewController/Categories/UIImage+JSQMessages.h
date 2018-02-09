@@ -29,6 +29,10 @@
  */
 - (UIImage *)jsq_imageMaskedWithColor:(UIColor *)maskColor;
 
+
+// customised method for border in bubble
+- (UIImage *)jsq_imageMaskedWithColor:(UIColor *)maskColor borderColor:(UIColor*)borderColor;
+
 /**
  *  @return The regular message bubble image.
  */

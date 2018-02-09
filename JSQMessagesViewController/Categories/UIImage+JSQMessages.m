@@ -23,9 +23,18 @@
 
 @implementation UIImage (JSQMessages)
 
-- (UIImage *)jsq_imageMaskedWithColor:(UIColor *)maskColor
+
+- (UIImage *)jsq_imageMaskedWithColor:(UIColor *)maskColor {
+    return [self jsq_imageMaskedWithColor:maskColor borderColor:nil];
+}
+
+- (UIImage *)jsq_imageMaskedWithColor:(UIColor *)maskColor borderColor:(UIColor*)borderColor
 {
     NSParameterAssert(maskColor != nil);
+    
+    if (borderColor == nil) {
+        borderColor =  [[UIColor clearColor] colorWithAlphaComponent:0.0f];
+    }
     
     CGRect imageRect = CGRectMake(0.0f, 0.0f, self.size.width, self.size.height);
     UIImage *newImage = nil;
@@ -36,11 +45,21 @@
         
         CGContextScaleCTM(context, 1.0f, -1.0f);
         CGContextTranslateCTM(context, 0.0f, -(imageRect.size.height));
-        
+        CGRect rect = imageRect;
+        rect.origin.x += 1.0;
+        rect.origin.y += 1.0;
+        rect.size.width -= 2.0;
+        rect.size.height -= 2.0;
         CGContextClipToMask(context, imageRect, self.CGImage);
-        CGContextSetFillColorWithColor(context, maskColor.CGColor);
+        CGContextSetFillColorWithColor(context, borderColor.CGColor);
         CGContextFillRect(context, imageRect);
         
+        // added border color for bubbles
+        CGContextClipToMask(context, rect, self.CGImage);
+        CGContextSetFillColorWithColor(context, maskColor.CGColor);
+        CGContextFillRect(context, rect);
+
+     
         newImage = UIGraphicsGetImageFromCurrentImageContext();
     }
     UIGraphicsEndImageContext();

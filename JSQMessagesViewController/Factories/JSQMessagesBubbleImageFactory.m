@@ -70,6 +70,12 @@
     return [self jsq_messagesBubbleImageWithColor:color flippedForIncoming:YES];
 }
 
+- (JSQMessagesBubbleImage *)incomingMessagesBubbleImageWithColor:(UIColor *)color withBorderColor:(UIColor *)borderColor
+{
+    return [self jsq_messagesBubbleImageWithColor:color flippedForIncoming:YES :borderColor];
+}
+
+
 #pragma mark - Private
 
 - (UIEdgeInsets)jsq_centerPointEdgeInsetsForImageSize:(CGSize)bubbleImageSize
@@ -79,11 +85,10 @@
     return UIEdgeInsetsMake(center.y, center.x, center.y, center.x);
 }
 
-- (JSQMessagesBubbleImage *)jsq_messagesBubbleImageWithColor:(UIColor *)color flippedForIncoming:(BOOL)flippedForIncoming
-{
-    NSParameterAssert(color != nil);
+- (JSQMessagesBubbleImage *)jsq_messagesBubbleImageWithColor:(UIColor *)color flippedForIncoming:(BOOL)flippedForIncoming :(UIColor *) borderColor {
     
-    UIImage *normalBubble = [self.bubbleImage jsq_imageMaskedWithColor:color];
+    
+    UIImage *normalBubble = [self.bubbleImage jsq_imageMaskedWithColor:color borderColor:borderColor];
     UIImage *highlightedBubble = [self.bubbleImage jsq_imageMaskedWithColor:[color jsq_colorByDarkeningColorWithValue:0.12f]];
     
     if (flippedForIncoming) {
@@ -95,6 +100,14 @@
     highlightedBubble = [self jsq_stretchableImageFromImage:highlightedBubble withCapInsets:self.capInsets];
     
     return [[JSQMessagesBubbleImage alloc] initWithMessageBubbleImage:normalBubble highlightedImage:highlightedBubble];
+   
+    
+}
+- (JSQMessagesBubbleImage *)jsq_messagesBubbleImageWithColor:(UIColor *)color flippedForIncoming:(BOOL)flippedForIncoming
+{
+    NSParameterAssert(color != nil);
+     return [self jsq_messagesBubbleImageWithColor:color flippedForIncoming:flippedForIncoming :nil];
+   
 }
 
 - (UIImage *)jsq_horizontallyFlippedImageFromImage:(UIImage *)image
