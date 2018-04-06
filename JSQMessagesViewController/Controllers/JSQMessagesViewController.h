@@ -172,6 +172,8 @@
  */
 @property (assign, nonatomic) CGFloat topContentAdditionalInset;
 
+@property (assign, nonatomic) IBOutlet NSLayoutConstraint* collectionViewBottomContraint;
+
 #pragma mark - Class methods
 
 /**
